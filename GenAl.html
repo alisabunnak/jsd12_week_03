@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🏷 ชื่อหน้าเว็บ -->
+<title>Lalisa Planner</title>
+
+<style>
+
+/* 🌍 Reset พื้นฐาน + ทำให้ padding ไม่พัง layout */
+* {
+  box-sizing: border-box;
+}
+
+/* 🖼 พื้นหลังเว็บ */
+/* 🖼 background จริง */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background: url('/Video/image\ copy\ 4.png') center/cover no-repeat fixed;
+  min-height: 200vh; /* ให้ scroll ได้ */
+}
+
+/* 📦 กล่องฟอร์มหลัก */
+.container {
+  max-width: 600px;        /* กว้างสุด */
+  margin: 50px auto;       /* จัดกลาง + เว้นบนล่าง */
+  padding: 30px;           /* ระยะด้านใน */
+
+  background: rgba(255, 255, 255, 0.9); /* สีขาว */
+  border-radius: 20px;     /* มุมโค้ง */
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3); /* เงา */
+}
+
+/* 🎀 หัวข้อหลัก */
+h1 {
+  text-align: center;
+  color: #d63384;
+}
+
+/* 📌 หัวข้อรอง */
+h2 {
+  text-align: center;
+  color: #666;
+  font-weight: normal;
+}
+
+/* 🧩 แบ่ง section แต่ละกลุ่ม */
+.section {
+  margin-bottom: 20px;
+}
+
+/* 🏷 label ของ input */
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+/* ✏️ input / select */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+  width: 100%;         /* เต็มกล่อง */
+  padding: 10px;
+  margin-top: 5px;
+
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+/* ✨ ตอน focus (คลิก) */
+input:focus, select:focus {
+  outline: none; /* เอากรอบ default ออก */
+  border-color: #ff85a2;
+
+  box-shadow: 0 0 5px rgba(255,133,162,0.5);
+}
+
+/* 🎯 กลุ่ม radio + checkbox */
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;       /* ช่องว่างระหว่างปุ่มกับ text */
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+/* ให้ input ไม่เต็ม width */
+.options input {
+  width: auto;
+}
+
+/* 💖 RADIO CUSTOM */
+.options input[type="radio"] {
+  appearance: none; /* ลบ style เดิม */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+
+  border: 2px solid #ff85a2;
+  background: white;
+  position: relative;
+}
+
+/* ตอนเลือก */
+.options input[type="radio"]:checked {
+  box-shadow: 0 0 8px rgba(255,77,136,0.8);
+}
+
+/* จุดด้านใน */
+.options input[type="radio"]::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #ff4d88;
+
+  border-radius: 50%;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%) scale(0);
+  transition: 0.2s;
+}
+
+/* แสดงเมื่อเลือก */
+.options input[type="radio"]:checked::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ☑️ CHECKBOX CUSTOM */
+.options input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+
+  border: 2px solid #ff85a2;
+  border-radius: 6px;
+  background: white;
+  position: relative;
+}
+
+/* ตอนติ๊ก */
+.options input[type="checkbox"]:checked {
+  background: #ff85a2;
+}
+
+/* เครื่องหมาย ✔ */
+.options input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 12px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+/* 🎀 ปุ่ม submit */
+button {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(135deg, #ff85a2, #ffb6c1);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* hover effect */
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive มือถือ */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 📦 กล่องครอบฟอร์ม -->
+<div class="container">
+
+<!-- 📝 ฟอร์ม -->
+<form>
+
+  <!-- 🎀 หัวข้อ -->
+  <h1> 🎀 Lalisa Planner 🎀 </h1>
+  <h2>Lunch Set & Coffee Break</h2>
+
+  <!-- 👤 ข้อมูลผู้ใช้ -->
+  <div class="section">
+    <label>Name</label>
+    <input type="text" required>
+
+    <label>Phone</label>
+    <input type="tel" required>
+
+    <label>Email</label>
+    <input type="email" required>
+  </div>
+
+  <!-- ☕ เครื่องดื่ม -->
+  <div class="section">
+    <label>Drink</label>
+    <input type="text" required>
+
+    <label>Size</label>
+    <select required>
+      <option value="">Select size</option>
+      <option>Venti</option>
+      <option>Grande</option>
+      <option>Tall</option>
+    </select>
+  </div>
+
+  <!-- 🥖 ขนมปัง -->
+  <div class="section">
+    <p>🥖 Bread</p>
+    <div class="options">
+      <label><input type="radio" name="bread"> Croissant</label>
+      <label><input type="radio" name="bread"> Sandwich</label>
+      <label><input type="radio" name="bread"> Pizza</label>
+    </div>
+  </div>
+
+  <!-- 🍰 ของหวาน -->
+  <div class="section">
+    <p>🍰 Dessert</p>
+    <div class="options">
+      <label><input type="radio" name="dessert" required> Milk Pudding</label>
+      <label><input type="radio" name="dessert"> Mochi Cream Cheese</label>
+      <label><input type="radio" name="dessert"> Tang Hu Lu</label>
+      <label><input type="radio" name="dessert"> Cheesecake</label>
+    </div>
+  </div>
+
+  <!-- 📅 วัน -->
+  <div class="section">
+    <p>📅 Days</p>
+    <div class="options">
+      <label><input type="checkbox"> Monday</label>
+      <label><input type="checkbox"> Tuesday</label>
+      <label><input type="checkbox"> Wednesday</label>
+      <label><input type="checkbox"> Thursday</label>
+      <label><input type="checkbox"> Friday</label>
+      <label><input type="checkbox"> Saturday</label>
+      <label><input type="checkbox"> Sunday</label>
+    </div>
+  </div>
+
+  <!-- 🚀 ปุ่มส่ง -->
+  <button type="submit">✨ Submit</button>
+
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lalisa Planner</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+  
+</head>
+
+<body>
+
+<form action="/submit-order" method="post">
+
+  <h1>Lalisa Planner</h1>
+  <hr>
+
+  <h2>Lunch Set & Coffee Break Form</h2>
+
+  <!-- Personal Info -->
+  <div class="section">
+    <label for="name">👩‍🦰👨‍🦱 Name</label>
+    <input id="name" type="text" name="name" placeholder="Enter your name" required>
+
+    <label for="phone">☎️ Phone Number</label>
+    <input id="phone" type="tel" name="phone" placeholder="0812345678" pattern="[0-9]{10}" required>
+
+    <label for="email">✉️ Email</label>
+    <input id="email" type="email" name="email" placeholder="example@email.com" required>
+  </div>
+
+  <!-- Drink -->
+  <div class="section">
+    <label for="drink">☕ Drink</label>
+    <input id="drink" type="text" name="drink" placeholder="e.g. Latte" required>
+
+    <label for="size">🥤 Size</label>
+    <select id="size" name="size" required>
+      <option value="">-- Select size --</option>
+      <option value="Venti">Venti</option>
+      <option value="Grande">Grande</option>
+      <option value="Tall">Tall</option>
+    </select>
+  </div>
+
+  <!-- Bread -->
+  <div class="section">
+    <p>🥖 Select your bread</p>
+
+    <label><input type="radio" name="bread" value="Croissant" required> Croissant</label>
+    <label><input type="radio" name="bread" value="Sandwich"> Sandwich</label>
+    <label><input type="radio" name="bread" value="Pizza"> Pizza</label>
+  </div>
+
+  <!-- Dessert -->
+  <div class="section">
+    <p>🍰 Select your dessert</p>
+
+    <label><input type="radio" name="dessert" value="Milk Pudding" required> Milk Pudding</label>
+    <label><input type="radio" name="dessert" value="Mochi Cream Cheese"> Mochi Cream Cheese</label>
+    <label><input type="radio" name="dessert" value="Tang Hu Lu"> Tang Hu Lu</label>
+    <label><input type="radio" name="dessert" value="Cheesecake"> Cheesecake</label>
+  </div>
+
+  <!-- Days -->
+  <div class="section">
+    <p>📅 Available days</p>
+
+    <label><input type="checkbox" name="days[]" value="Mon"> Mon</label>
+    <label><input type="checkbox" name="days[]" value="Tue"> Tue</label>
+    <label><input type="checkbox" name="days[]" value="Wed"> Wed</label>
+    <label><input type="checkbox" name="days[]" value="Thu"> Thu</label>
+    <label><input type="checkbox" name="days[]" value="Fri"> Fri</label>
+    <label><input type="checkbox" name="days[]" value="Sat"> Sat</label>
+    <label><input type="checkbox" name="days[]" value="Sun"> Sun</label>
+  </div>
+
+  <!-- Time -->
+  <div class="section">
+    <p>🕒 Preferred time</p>
+
+    <label><input type="radio" name="time" value="Morning" required> Morning</label>
+    <label><input type="radio" name="time" value="Afternoon"> Afternoon</label>
+  </div>
+
+  <button type="submit">Submit Order</button>
+
+</form>
+
+</body>
+</html>

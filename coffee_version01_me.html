@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<form action="/submit-order" method="post">
+    <h1 style="text-align: center;">Lalisa Planer</h1>
+    <hr>
+  <h2>แบบฟอร์มสั่ง Lunch Set & Coffee Break</h2>
+
+    <label for="name">Name : 👩‍🦰👨‍🦱</label><br>
+    <input 
+        id="name" 
+        type="text" 
+        placeholder="กรอกชื่อของคุณ" 
+        name="name" 
+        required
+    ><br><br>
+
+    <label for="phone">Phone Number : ☎️</label><br>
+    <input 
+        id="phone" 
+        type="tel" 
+        placeholder="กรอกเบอร์โทร" 
+        name="phone" 
+        required
+    ><br><br>
+
+    <label for="email">E-mail : ✉️</label><br>
+    <input 
+        id="email" 
+        type="email" 
+        placeholder="กรอกอีเมล" 
+        name="email" 
+        required>
+    <br><br>
+
+<div>
+    <p>Please enter the name of your drink ☕ </p>
+    <form action="https://www.google.com/search" method="get">
+      <input type="text" name="q" />
+      <label for="size">Select Size</label>
+      <select name="" id="size">
+        <option value="big">Venti</option>
+        <option value="medium">Grande</option>
+        <option value="small">Tall</option>
+      </select>
+    </form>
+  </div>
+
+
+  <div>
+    <p>Select your favorite bread 🥖</p>
+
+    <input type="radio" name="Typeofbread" id="Croissant" value="Croissant">
+    <label for="Croissant">Croissant</label>
+    <br>
+
+    <input type="radio" name="Typeofbread" id="Sandwich" value="Sandwich">
+    <label for="Sandwich">Sandwich</label>
+    <br>
+
+    <input type="radio" name="Typeofbread" id="Pizza" value="Pizza">
+    <label for="Pizza">Pizza</label>
+    <br>
+  </div>
+  
+  <div>
+    <p>Select your favorite dessert🍰</p>
+
+    <input type="radio" name="TypeofDessert" id="Milk Pudding" value="Milk Pudding">
+    <label for="Milk Pudding">Milk Pudding</label>
+
+    <input type="radio" name="TypeofDessert" id="Moji Cream Cheese" value="Moji Cream Cheese">
+    <label for="Moji Cream Cheese">Moji Cream Cheese</label>
+
+    <input type="radio" name="TypeofDessert" id="Tang Hu Lu" value="Tang Hu Lu">
+    <label for="Tang Hu Lu">Tang Hu Lu</label>
+
+    <input type="radio" name="TypeofDessert" id="CheeseCake" value="CheeseCake">
+    <label for="CheeseCake">CheeseCake</label>
+  </div>
+     <hr>
+
+    <div>
+        <p>Select available days: 📅</p>
+            <label><input type="checkbox" name="day" value="Mon"> Mon</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Tue"> Tue</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Wed"> Wed</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Thu"> Thu</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Fri"> Fri</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Sat"> Sat</label>
+            <br>
+            <label><input type="checkbox" name="day" value="Sun"> Sun</label>
+            <br>
+      </div>
+
+    <div>
+        <p>Select available time 🕒 </p>
+
+            <input type="radio" name="time" id="Morning" value="Morning">
+            <label for="Morning">MorningMorning</label>
+
+            <input type="radio" name="time" id="Afternoon" value="Afternoon">
+            <label for="Afternoon">Afternoon</label>
+    </div>
+       <br>
+            <button type="submit">submit</button>
+    </form>
+    <hr>
+
+  </body>
+</html>

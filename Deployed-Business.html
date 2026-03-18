@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lalisa Planner</title>
+
+<style>
+/* 🌍 Reset */
+* {
+  box-sizing: border-box;
+}
+
+/* 🖼 Background เต็มจอ */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background: url('/Video/image\ copy\ 4.png') center/cover no-repeat fixed;
+  min-height: 100vh;
+}
+
+/* 📦 Container */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* 🎀 Title */
+h1 {
+  text-align: center;
+  color: #d63384;
+}
+
+h2 {
+  text-align: center;
+  color: #666;
+  font-weight: normal;
+}
+
+/* 🧩 Section */
+.section {
+  margin-bottom: 20px;
+}
+
+/* 🏷 Label */
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* ✏️ Input */
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #ff85a2;
+  box-shadow: 0 0 5px rgba(255,133,162,0.5);
+}
+
+/* 🎯 Options */
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.options input {
+  width: auto;
+}
+
+/* 💖 Radio */
+.options input[type="radio"] {
+  accent-color: #ff85a2;
+}
+
+/* ☑️ Checkbox */
+.options input[type="checkbox"] {
+  accent-color: #ff85a2;
+}
+
+/* 🎀 Button */
+button {
+  width: 100%;
+  padding: 12px;
+
+  background: linear-gradient(135deg, #ff85a2, #ffb6c1);
+  color: white;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<form action="http://localhost:3000/submit" method="POST">
+
+  <h1>🎀 Lalisa Planner 🎀</h1>
+  <h2>Lunch Set & Coffee Break</h2>
+
+  <!-- 👤 User Info -->
+  <div class="section">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" placeholder="Enter your name" required>
+
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" placeholder="08xxxxxxxx" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" placeholder="example@email.com" required>
+  </div>
+
+  <!-- ☕ Drink -->
+  <div class="section">
+    <label for="drink">Drink</label>
+    <input id="drink" name="drink" type="text" placeholder="Latte / Matcha / etc." required>
+
+    <label for="size">Size</label>
+    <select id="size" name="size" required>
+      <option value="">Select size</option>
+      <option value="Venti">Venti</option>
+      <option value="Grande">Grande</option>
+      <option value="Tall">Tall</option>
+    </select>
+  </div>
+
+  <!-- 🥖 Bread -->
+  <div class="section">
+    <p>🥖 Bread</p>
+    <div class="options">
+      <label><input type="radio" name="bread" value="Croissant" required> Croissant</label>
+      <label><input type="radio" name="bread" value="Sandwich"> Sandwich</label>
+      <label><input type="radio" name="bread" value="Pizza"> Pizza</label>
+    </div>
+  </div>
+
+  <!-- 🍰 Dessert -->
+  <div class="section">
+    <p>🍰 Dessert</p>
+    <div class="options">
+      <label><input type="radio" name="dessert" value="Milk Pudding" required> Milk Pudding</label>
+      <label><input type="radio" name="dessert" value="Mochi Cream Cheese"> Mochi Cream Cheese</label>
+      <label><input type="radio" name="dessert" value="Tang Hu Lu"> Tang Hu Lu</label>
+      <label><input type="radio" name="dessert" value="Cheesecake"> Cheesecake</label>
+    </div>
+  </div>
+
+  <!-- 📅 Days -->
+  <div class="section">
+    <p>📅 Days</p>
+    <div class="options">
+        <label><input type="checkbox" name="days[]" value="Monday"> Monday</label>
+        <label><input type="checkbox" name="days[]" value="Tuesday"> Tuesday</label>
+        <label><input type="checkbox" name="days[]" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" name="days[]" value="Thursday"> Thursday</label>
+        <label><input type="checkbox" name="days[]" value="Friday"> Friday</label>
+        <label><input type="checkbox" name="days[]" value="Saturday"> Saturday</label>
+        <label><input type="checkbox" name="days[]" value="Sunday"> Sunday</label>
+    </div>
+  </div>
+
+  <button type="submit">✨ Submit</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
